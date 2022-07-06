@@ -16,7 +16,7 @@ console.log('**************************END OF GUIDELINES************************
 
 let parkingArea = new ParkingLot()
 let Input = ''
-let entries = 0
+
 while (Input !== 'exit') {
     Input = prompt('Enter Command: ')
 
