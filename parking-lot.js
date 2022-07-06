@@ -18,6 +18,7 @@ class ParkingLot {
 
     addEntry(count) {
         this.entries = count
+        console.log('Successfuly added entries point count')
     }
 
     mapSlotLocation() {
