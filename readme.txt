@@ -13,5 +13,5 @@ To run type 'npm install' then 'npm run dev'
 'Commands: type "p" to park vehicle'
 'Commands: type "u" to unpark vehicle'
 
-WARNING: bugs might show if wrong input
+WARNING: bugs might show if wrong input. rerun if there is bug.
 '**************************END OF GUIDELINES*************************')
