@@ -3,7 +3,7 @@ const prompt = require('prompt-sync')({sigint: true});
 class ParkingLot {
     constructor() {
         this.entries = 0
-        this.nextSlotCounter = 1,
+        this.nextSlotCounter = 1
         this.slots = []
         this.hadLeft = []
     }
