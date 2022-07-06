@@ -5,6 +5,7 @@ by Karl Enano
 To run type 'npm install' then 'npm run dev'
 Input is run through terminal.
 To view data easily you can go to https://jsonformatter.org/ and paste the JSON
+Normal Flow: Set entry point count first(e)-> create parking slot(s)-> park vehicle(p) -> unpark vehicle(u)
 
 '**************************GUIDELINES*************************'
 'Warning: exiting the app will clear the memory.'
@@ -17,4 +18,4 @@ To view data easily you can go to https://jsonformatter.org/ and paste the JSON
 
 notes: All of the conditions is working except for distance calculation
 WARNING: bugs might show at some point. rerun if there is bug.
-'**************************END OF GUIDELINES*************************')
+'**************************END OF GUIDELINES*************************'
