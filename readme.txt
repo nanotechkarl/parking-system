@@ -3,6 +3,7 @@ by Karl Enano
 
 
 To run type 'npm install' then 'npm run dev'
+To view data easily you can go to https://jsonformatter.org/ and paste the JSON
 
 '**************************GUIDELINES*************************'
 'Warning: exiting the app will clear the memory.'
