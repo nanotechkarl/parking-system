@@ -14,5 +14,6 @@ To view data easily you can go to https://jsonformatter.org/ and paste the JSON
 'Commands: type "p" to park vehicle'
 'Commands: type "u" to unpark vehicle'
 
+notes: All of the conditions is working except for distance calculation
 WARNING: bugs might show if wrong input. rerun if there is bug.
 '**************************END OF GUIDELINES*************************')
