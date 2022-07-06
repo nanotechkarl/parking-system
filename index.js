@@ -1,6 +1,6 @@
 const prompt = require('prompt-sync')({sigint: true});
 
-const ParkingLot = require('./parkingLot')
+const ParkingLot = require('./parking-lot')
 
 console.log('Welcome to the Parking app! Read guidelines before proceeding')
 console.log('**************************GUIDELINES*************************')
