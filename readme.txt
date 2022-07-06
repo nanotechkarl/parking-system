@@ -3,6 +3,7 @@ by Karl Enano
 
 
 To run type 'npm install' then 'npm run dev'
+Input is run through terminal.
 To view data easily you can go to https://jsonformatter.org/ and paste the JSON
 
 '**************************GUIDELINES*************************'
@@ -15,5 +16,5 @@ To view data easily you can go to https://jsonformatter.org/ and paste the JSON
 'Commands: type "u" to unpark vehicle'
 
 notes: All of the conditions is working except for distance calculation
-WARNING: bugs might show if wrong input. rerun if there is bug.
+WARNING: bugs might show at some point. rerun if there is bug.
 '**************************END OF GUIDELINES*************************')
