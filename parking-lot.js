@@ -92,7 +92,7 @@ class ParkingLot {
     }
 
     parkVehicle(name, vehicleSize, entryPoint) {
-        //wrong could not make distance work
+        //wrong could not make distance work instead populate by slot order
         let populateOne = false
         let dateCurrent = new Date(Date.now())
         let hoursContinue = Infinity
