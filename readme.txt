@@ -1,5 +1,9 @@
 'Welcome to the Parking app! Read guidelines before proceeding'
 by Karl Enano
+
+
+To run type 'npm install' then 'npm run dev'
+
 '**************************GUIDELINES*************************'
 'Warning: exiting the app will clear the memory.'
 'Commands: type "exit" to exit'
