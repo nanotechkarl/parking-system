@@ -56,7 +56,7 @@ while (Input !== 'exit') {
                 ) {
                 parkingArea.parkVehicle(carName, vehicleSize, entryPoint)
             } else {
-                console.log('Must be a number. Check your input!')
+                console.log('Check your input!')
             }
         } else {
             console.log('entries/slots unavailable. make sure to have entry points and parking slots first')

@@ -94,15 +94,16 @@ class ParkingLot {
         //wrong could not make distance work
         let populateOne = false
         let dateCurrent = new Date(Date.now())
-
+        let hoursContinue = Infinity
 
         if(this.hadLeft.length > 0) {
             const userHadLeft = this.hadLeft.find((obj)=> {
                 return obj.name == name
             })
-            
-            let hoursContinue = this.diffHoursNotRounded(new Date(Date.now()), userHadLeft.dateLeft) //diff of date left and date.now manipulate here
-            console.log('If less than one hour, proceeding to continue your previous stay :', hoursContinue); //if less than 1 hour update Occupied date by its last date occupied
+            if(userHadLeft){
+                hoursContinue = this.diffHoursNotRounded(new Date(Date.now()), userHadLeft.dateLeft) //diff of date left and date.now manipulate here
+                console.log('If less than one hour, proceeding to continue your previous stay :', hoursContinue); //if less than 1 hour update Occupied date by its last date occupied
+            }
 
             if(hoursContinue < 1) {
                 dateCurrent = userHadLeft.lastDateOccupied
@@ -121,17 +122,24 @@ class ParkingLot {
 
             if(!userExist){
                 this.slots.map((obj)=>{
-                    if (obj.size >= vehicleSize && !Object.keys(obj.occupiedBy).length && !populateOne) {
-                        obj.occupiedBy = {
-                            name, 
-                            vehicleSize,
-                            entryPoint,
-                            date: dateCurrent
+                    if(obj.size >= vehicleSize) {
+                        if (!Object.keys(obj.occupiedBy).length && !populateOne) {
+                            obj.occupiedBy = {
+                                name, 
+                                vehicleSize,
+                                entryPoint,
+                                date: dateCurrent
+                            }
+                            populateOne = true
+
+                            console.log('Parked Successfully')
+                        } else {
+                            console.log('Error no more space.')
                         }
-                        populateOne = true
                     } else {
-                        
+                        console.log('Error. Check vehicle size versus available parking slot size')
                     }
+                    
                 })
             } else {
                 console.log('User already exist. try another name.')
