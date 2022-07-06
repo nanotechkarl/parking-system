@@ -14,9 +14,9 @@ console.log('Commands: type "u" to unpark vehicle')
 
 console.log('**************************END OF GUIDELINES*************************')
 
-let Input = ''
 let parkingArea = new ParkingLot()
-
+let Input = ''
+let entries = 0
 while (Input !== 'exit') {
     Input = prompt('Enter Command: ')
 
@@ -40,30 +40,40 @@ while (Input !== 'exit') {
     }
 
     if(Input === 'p') {
-        let carName = prompt('Enter car name: ')
-        let vehicleSize = parseInt(prompt('Enter vehicle size(1,2,3):  '))
-        let entryPoint = parseInt(prompt('Enter entry point: '))
-
-        if(
-            vehicleSize && 
-            (
-                vehicleSize === 1 ||
-                vehicleSize === 2 ||
-                vehicleSize === 3 
-            )
-            && entryPoint
-            ) {
-            parkingArea.parkVehicle(carName, vehicleSize, entryPoint)
+        if(parkingArea.entries >= 3 && parkingArea.slots.length != 0) {
+            let carName = prompt('Enter car name: ')
+            let vehicleSize = parseInt(prompt('Enter vehicle size(1,2,3):  '))
+            let entryPoint = parseInt(prompt('Enter entry point: '))
+    
+            if(
+                vehicleSize && 
+                (
+                    vehicleSize === 1 ||
+                    vehicleSize === 2 ||
+                    vehicleSize === 3 
+                )
+                && entryPoint
+                ) {
+                parkingArea.parkVehicle(carName, vehicleSize, entryPoint)
+            } else {
+                console.log('Must be a number. Check your input!')
+            }
         } else {
-            console.log('Must be a number. Check your input!')
+            console.log('entries/slots unavailable. make sure to have entry points and parking slots first')
         }
+
+       
     }
 
     if(Input === 'u') {
-        let carName = prompt('Enter car name to be unparked: ')
+        if(parkingArea.entries >= 3 && parkingArea.slots.length != 0) {
+            let carName = prompt('Enter car name to be unparked: ')
         
-        parkingArea.unparkVehicle(carName)
-    }
+            parkingArea.unparkVehicle(carName)
+        } else {
+            console.log('entries/slots unavailable. make sure to have entry points and parking slots first')
+        }
+    } 
 
 }
 console.log('Exiting parking app. Thank you!')
