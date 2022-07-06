@@ -25,14 +25,14 @@ while (Input !== 'exit') {
     }
 
     if(Input === 'e'){
-            let entry = prompt('Enter number of entry points: ')
+            let entry = prompt('Enter number of entry points. leave blank or enter non-integer to go back: ')
             let entries = parseInt(entry)
         
             if(entries >= 3) {
                 parkingArea.addEntry(entries)        
             } else {
                 console.log('Number of entry point must be greater or equal to 3!')
-            }
+            } 
     }
 
     if(Input === 's') {
@@ -42,7 +42,7 @@ while (Input !== 'exit') {
     if(Input === 'p') {
         if(parkingArea.entries >= 3 && parkingArea.slots.length != 0) {
             let carName = prompt('Enter car name: ')
-            let vehicleSize = parseInt(prompt('Enter vehicle size(1,2,3):  '))
+            let vehicleSize = parseInt(prompt('Enter vehicle size(1 for S,2 for M,3 for L):  '))
             let entryPoint = parseInt(prompt('Enter entry point: '))
     
             if(

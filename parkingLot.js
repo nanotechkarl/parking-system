@@ -64,11 +64,14 @@ class ParkingLot {
             size,
             location: slotLocation
         }
-
-        let isDuplicate = this.isDuplicateSlotLocation(slotLocation)
+        let isDuplicate = false
+        
+        if(slotLocation.length){
+            isDuplicate = this.isDuplicateSlotLocation(slotLocation)
+        }
         
         if(isDuplicate){
-            console.log('Duplicate slot. Repeat again')
+            console.log('Duplicate slot. Please try again again')
         } else {
             this.slots.push(slot)
             this.nextSlotCounter++
@@ -113,19 +116,28 @@ class ParkingLot {
         }
 
         if(entryPoint <= this.entries && entryPoint > 0) {
-            this.slots.map((obj)=>{
-                if (obj.size >= vehicleSize && !Object.keys(obj.occupiedBy).length && !populateOne) {
-                    obj.occupiedBy = {
-                        name, 
-                        vehicleSize,
-                        entryPoint,
-                        date: dateCurrent
-                    }
-                    populateOne = true
-                } else {
-                    
-                }
+            const userExist = this.slots.find((obj)=> {
+                return obj.occupiedBy.name == name
             })
+
+            if(!userExist){
+                this.slots.map((obj)=>{
+                    if (obj.size >= vehicleSize && !Object.keys(obj.occupiedBy).length && !populateOne) {
+                        obj.occupiedBy = {
+                            name, 
+                            vehicleSize,
+                            entryPoint,
+                            date: dateCurrent
+                        }
+                        populateOne = true
+                    } else {
+                        
+                    }
+                })
+            } else {
+                console.log('User already exist. try another name.')
+            }
+      
         }
     }
 
@@ -140,6 +152,8 @@ class ParkingLot {
                     lastDateOccupied: obj.occupiedBy.date
                 })
                 obj.occupiedBy = {}
+            } else {
+                console.log('Nothing to unpark')
             }
         })
     }
