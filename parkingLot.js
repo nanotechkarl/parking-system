@@ -102,12 +102,11 @@ class ParkingLot {
             })
             
             let hoursContinue = this.diffHoursNotRounded(new Date(Date.now()), userHadLeft.dateLeft) //diff of date left and date.now manipulate here
-            console.log('hoursContinue :', hoursContinue); //if less than 1 hour update Occupied date by its last date occupied
+            console.log('If less than one hour, proceeding to continue your previous stay :', hoursContinue); //if less than 1 hour update Occupied date by its last date occupied
 
             if(hoursContinue < 1) {
                 dateCurrent = userHadLeft.lastDateOccupied
             } 
-
 
             //remove vehicle on hadLeft
             this.hadLeft = this.hadLeft.filter((obj) => { 
