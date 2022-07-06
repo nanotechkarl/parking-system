@@ -25,7 +25,7 @@ while (Input !== 'exit') {
     }
 
     if(Input === 'e'){
-            let entry = prompt('Enter number of entry points. leave blank or enter non-integer to go back: ')
+            let entry = prompt('Enter number of entry points(min of 3). leave blank or enter non-integer to go back: ')
             let entries = parseInt(entry)
         
             if(entries >= 3) {
