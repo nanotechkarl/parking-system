@@ -159,7 +159,7 @@ class ParkingLot {
 
     billsPayment(date, size) {
         const leavingDate = new Date(Date.now()) //add plus for value demo  ex + (28hours)*60*60*1000
-        let hours = this.diffHours(leavingDate, date) 
+        let hours = this.diffHoursRounded(leavingDate, date) 
         let payment = 0
         let rate = 0
         if(size == 1) {
@@ -194,7 +194,7 @@ class ParkingLot {
     }
 
 
-    diffHours(dt2, dt1) {
+    diffHoursRounded(dt2, dt1) {
         let diff =(dt2.getTime() - dt1.getTime()) / 1000;
         diff /= (60 * 60);
         
