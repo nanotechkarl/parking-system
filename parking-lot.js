@@ -138,8 +138,6 @@ class ParkingLot {
 
                             console.log('Parked Successfully')
                         }
-                    } else {
-                        console.log('Error. Check vehicle size versus available parking slot size')
                     }
                 })
             } else {
