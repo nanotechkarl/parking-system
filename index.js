@@ -16,6 +16,7 @@ console.log('**************************END OF GUIDELINES************************
 
 let parkingArea = new ParkingLot()
 let Input = ''
+let setEntry = false
 
 while (Input !== 'exit') {
     Input = prompt('Enter Command: ')
@@ -25,14 +26,20 @@ while (Input !== 'exit') {
     }
 
     if(Input === 'e'){
+        if(!setEntry){
             let entry = prompt('Enter number of entry points(min of 3). leave blank or enter non-integer to go back: ')
             let entries = parseInt(entry)
         
             if(entries >= 3) {
-                parkingArea.addEntry(entries)        
+                parkingArea.addEntry(entries)
+                setEntry = true        
             } else {
                 console.log('Number of entry point must be greater or equal to 3!')
             } 
+        } else {
+            console.log('Entry is already set. restart app to change.')
+        }
+         
     }
 
     if(Input === 's') {
