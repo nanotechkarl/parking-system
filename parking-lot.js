@@ -92,7 +92,6 @@ class ParkingLot {
     }
 
     parkVehicle(name, vehicleSize, entryPoint) {
-        //wrong could not make distance work instead populate by slot order
         let populateOne = false
         let dateCurrent = new Date(Date.now())
         let hoursContinue = Infinity
@@ -122,6 +121,10 @@ class ParkingLot {
             })
 
             if(!userExist){
+                this.slots.sort((a,b)=>{
+                    return a.location[parseInt(entryPoint)-1]-b.location[parseInt(entryPoint)-1]
+                })
+
                 this.slots.map((obj)=>{
                     if(obj.size >= vehicleSize) {
                         if (!Object.keys(obj.occupiedBy).length && !populateOne) {
@@ -138,7 +141,6 @@ class ParkingLot {
                     } else {
                         console.log('Error. Check vehicle size versus available parking slot size')
                     }
-                    
                 })
             } else {
                 console.log('User already exist. try another name.')

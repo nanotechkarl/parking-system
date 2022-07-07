@@ -16,6 +16,6 @@ Normal Flow: Set entry point count first(e)-> create parking slot(s)-> park vehi
 'Commands: type "p" to park vehicle'
 'Commands: type "u" to unpark vehicle'
 
-notes: All of the conditions is working except for distance calculation
+notes: All of the conditions is working but not sure if there is bugs
 WARNING: bugs might show at some point. rerun if there is bug.
 '**************************END OF GUIDELINES*************************'
