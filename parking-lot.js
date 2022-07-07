@@ -125,6 +125,7 @@ class ParkingLot {
                 this.slots.map((obj)=>{
                     if(obj.size >= vehicleSize) {
                         if (!Object.keys(obj.occupiedBy).length && !populateOne) {
+                            console.log('obj', obj.location)
                             obj.occupiedBy = {
                                 name, 
                                 vehicleSize,
@@ -134,8 +135,6 @@ class ParkingLot {
                             populateOne = true
 
                             console.log('Parked Successfully')
-                        } else {
-                            console.log('Error no more space.')
                         }
                     } else {
                         console.log('Error. Check vehicle size versus available parking slot size')
@@ -160,8 +159,6 @@ class ParkingLot {
                     lastDateOccupied: obj.occupiedBy.date
                 })
                 obj.occupiedBy = {}
-            } else {
-                console.log('Nothing to unpark')
             }
         })
     }
