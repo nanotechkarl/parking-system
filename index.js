@@ -48,9 +48,9 @@ while (Input !== 'exit') {
             if(
                 vehicleSize && 
                 (
-                    vehicleSize === 1 ||
-                    vehicleSize === 2 ||
-                    vehicleSize === 3 
+                    vehicleSize === 1 
+                    || vehicleSize === 2
+                    || vehicleSize === 3 
                 )
                 && entryPoint
                 ) {
