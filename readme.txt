@@ -4,7 +4,7 @@ by Karl Enano
 
 To run type 'npm install' then 'npm run dev'
 Input is run through terminal.
-To view data easily you can go to https://jsonformatter.org/ and paste the JSON
+To view result easily you can go to https://jsonformatter.org/ and paste the JSON result
 Normal Flow: Set entry point count first(e)-> create parking slot(s)-> park vehicle(p) -> unpark vehicle(u)
 
 '**************************GUIDELINES*************************'
