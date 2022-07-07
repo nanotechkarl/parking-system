@@ -125,7 +125,6 @@ class ParkingLot {
                 this.slots.map((obj)=>{
                     if(obj.size >= vehicleSize) {
                         if (!Object.keys(obj.occupiedBy).length && !populateOne) {
-                            console.log('obj', obj.location)
                             obj.occupiedBy = {
                                 name, 
                                 vehicleSize,
